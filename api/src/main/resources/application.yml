@@ -1,17 +1,17 @@
 doodle:
-  usepad: true
-  internalPadUrl: "http://localhost:9001/"
-  externalPadUrl: "http://localhost:9001/"
+  usepad: false
+  internalPadUrl: "http://etherpad:9001/"
+  externalPadUrl: "http://etherpad.diverse-team.fr:9001/"
   padApiKey: "19d89ca52bc0fa4f19d6325464d9d7a032649b9fa68c111514627081e2784b4a"
   organizermail: "olivier.barais@gmail.com"
   tmpfolder: "/tmp/excelFiles"
 quarkus:
   datasource:
     db-kind: mysql
-    username: root
-    password: ""
+    username: tlc
+    password: tlc
     jdbc:
-      url: jdbc:mysql://localhost:3306/tlc?useUnicode=true&serverTimezone=Europe/Paris
+      url: jdbc:mysql://db:3306/tlc
       driver: com.mysql.cj.jdbc.Driver
   flyway:
     migrate-at-start: true
@@ -19,12 +19,13 @@ quarkus:
 #      generation: none
 #      globally-quoted-identifiers: true
   mailer:
-    from: test@quarkus.io
+    #from: test@quarkus.io
+    from: ikounadi02@gmail.com
 #    host: smtp.sendgrid.net
-    host: localhost
+    host: mail
     port: 2525
 #    port: 465
 #    ssl: true
-#    username: ""
-#    password: ""
+    username: "ikounadi02"
+    password: "77169209"
     mock: false

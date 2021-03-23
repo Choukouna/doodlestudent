@@ -6,7 +6,6 @@
 -- Généré le :  mar. 03 nov. 2020 à 18:32
 -- Version du serveur :  8.0.19
 -- Version de PHP :  7.3.11-0ubuntu0.19.10.4
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -24,13 +23,12 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `tlc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `tlc`;
 
--- --------------------------------------------------------
 
 --
 -- Structure de la table `Choice`
 --
 
-CREATE TABLE `Choice` (
+CREATE TABLE IF NOT EXISTS `Choice` (
   `id` bigint NOT NULL,
   `endDate` datetime(6) DEFAULT NULL,
   `startDate` datetime(6) DEFAULT NULL,
@@ -43,7 +41,7 @@ CREATE TABLE `Choice` (
 -- Structure de la table `choice_user`
 --
 
-CREATE TABLE `choice_user` (
+CREATE TABLE IF NOT EXISTS `choice_user` (
   `choice_id` bigint NOT NULL,
   `user_id` bigint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -54,7 +52,7 @@ CREATE TABLE `choice_user` (
 -- Structure de la table `Comment`
 --
 
-CREATE TABLE `Comment` (
+CREATE TABLE IF NOT EXISTS `Comment` (
   `id` bigint NOT NULL,
   `auteur` varchar(255) DEFAULT NULL,
   `content` varchar(255) DEFAULT NULL,
@@ -67,7 +65,7 @@ CREATE TABLE `Comment` (
 -- Structure de la table `hibernate_sequence`
 --
 
-CREATE TABLE `hibernate_sequence` (
+CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
   `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -78,7 +76,7 @@ CREATE TABLE `hibernate_sequence` (
 -- Structure de la table `MealPreference`
 --
 
-CREATE TABLE `MealPreference` (
+CREATE TABLE IF NOT EXISTS `MealPreference` (
   `id` bigint NOT NULL,
   `content` varchar(255) DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
@@ -91,7 +89,7 @@ CREATE TABLE `MealPreference` (
 -- Structure de la table `Poll`
 --
 
-CREATE TABLE `Poll` (
+CREATE TABLE IF NOT EXISTS `Poll` (
   `id` bigint NOT NULL,
   `clos` bit(1) NOT NULL,
   `createdAt` datetime(6) DEFAULT NULL,
@@ -113,7 +111,7 @@ CREATE TABLE `Poll` (
 -- Structure de la table `User`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE IF NOT EXISTS `User` (
   `id` bigint NOT NULL,
   `icsurl` varchar(255) DEFAULT NULL,
   `mail` varchar(255) DEFAULT NULL,
@@ -203,6 +201,31 @@ ALTER TABLE `Poll`
   ADD CONSTRAINT `FKo3gvyilei6ae6n4o2k2xgbfar` FOREIGN KEY (`selectedChoice_id`) REFERENCES `Choice` (`id`);
 COMMIT;
 
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+(15),
+(15),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1),
+(1);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

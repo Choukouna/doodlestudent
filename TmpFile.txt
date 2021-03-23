@@ -1,0 +1,12 @@
+*Le fichier Dockerfile.jvm permet de builder et packager le backend, 
+    Lire les commentaires au sein du fichier pour créer l'image
+*Créer l'image du front
+    -Le front étant une app angular, on doit compiler ses sources avec la cli angular (ng-build et tout);
+    -Copier le dossier dist dans le dossier de www du bunkerized-nginx (voir fichier Dockerfile) à la racine
+    du dossier front;
+*Créer un docker-compose pour lancer les différentes images créées (backend, front, db, smtp, etherpad)
+    voir fichier docker-compose.yml du repertoire api;
+*MAJ du fichier de conf quarkus application.yml 
+    -Spécifier la datasource;
+*Lancer la stack : docker-compose up -f docker-compose.yaml --build
+
