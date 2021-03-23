@@ -10,3 +10,9 @@
     -Spécifier la datasource;
 *Lancer la stack : docker-compose up -f docker-compose.yaml --build
 
+---Sur la VM---
+Installer git : sudo apt install git
+Installer docker : sudo apt install docker.io
+Installer java : sudo apt install openjdk-11-jre-headless
+Installer maven : sudo apt install maven
+
