@@ -55,7 +55,7 @@ services:
       - "2525:25"
 
   backend:
-    image: backend_img:5.0
+    image: backend_img:6.0
     deploy:
       restart_policy:
         condition: on-failure
