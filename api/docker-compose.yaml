@@ -17,16 +17,18 @@ services:
     image: doodle_frontend:7.0
     volumes:
       - ./server-confs/:/server-confs
+      - ./letsencrypt:/etc/letsencrypt
     restart: always
     ports:
       - "443:8443"
       - "80:8080"
     environment:
-      - AUTO_LETS_ENCRYPT=no #to make site accessible by HTTPS
-      - REDIRECT_HTTP_TO_HTTPS=no
+      - AUTO_LETS_ENCRYPT=yes #to make site accessible by HTTPS
+      - REDIRECT_HTTP_TO_HTTPS=yes
       - USE_REVERSE_PROXY=yes
-      - MULTISITE=no
-      - SERVER_NAME=doodle.diverse-team.fr pad.diverse-team.fr phpmyadmin.diverse-team.fr rlok.diverse-team.fr localhost
+      #- MULTISITE=no
+      #- SERVER_NAME=doodle.diverse-team.fr pad.diverse-team.fr phpmyadmin.diverse-team.fr rlok.diverse-team.fr localhost
+      - SERVER_NAME=rlok.pad.diverse-team.fr rlok.phpmyadmin.diverse-team.fr rlok.diverse-team.fr
       - SERVE_FILES=yes
       - DISABLE_DEFAULT_SERVER=no
       # Transmission de l'IP publique vers les containers
@@ -53,7 +55,7 @@ services:
       - "2525:25"
 
   backend:
-    image: backend_img:4.0
+    image: backend_img:5.0
     deploy:
       restart_policy:
         condition: on-failure
