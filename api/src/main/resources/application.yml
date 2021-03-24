@@ -11,10 +11,8 @@ quarkus:
     username: tlc
     password: tlc
     jdbc:
-      url: jdbc:mysql://db:3306/tlc
+      url: jdbc:mysql://db:3306/tlc 
       driver: com.mysql.cj.jdbc.Driver
-  flyway:
-    migrate-at-start: true
 #    database:
 #      generation: none
 #      globally-quoted-identifiers: true
