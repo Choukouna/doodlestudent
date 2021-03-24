@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.8"
 services:
   db:
     image: mysql:latest
@@ -52,9 +52,7 @@ services:
 
   backend:
     image: backend_img:2.0
-    deploy:
-      restart_policy:
-        condition: on-failure
+    restart: always
     depends_on:
       [db]
     ports:
