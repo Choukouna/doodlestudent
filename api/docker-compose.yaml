@@ -28,7 +28,7 @@ services:
       - USE_REVERSE_PROXY=yes
       #- MULTISITE=no
       #- SERVER_NAME=doodle.diverse-team.fr pad.diverse-team.fr phpmyadmin.diverse-team.fr rlok.diverse-team.fr localhost
-      - SERVER_NAME=rlok.pad.diverse-team.fr rlok.phpmyadmin.diverse-team.fr rlok.diverse-team.fr
+      - SERVER_NAME=pad.rlok.diverse-team.fr phpmyadmin.rlok.diverse-team.fr rlok.diverse-team.fr
       - SERVE_FILES=yes
       - DISABLE_DEFAULT_SERVER=no
       # Transmission de l'IP publique vers les containers
