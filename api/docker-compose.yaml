@@ -52,7 +52,9 @@ services:
 
   backend:
     image: backend_img:2.0
-    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
     depends_on:
       [db]
     ports:
