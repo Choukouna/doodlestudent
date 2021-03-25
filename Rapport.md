@@ -24,7 +24,7 @@ Lancer la stack de container
 <p>
     Créer un docker-compose pour lancer les différentes images créées (backend, front, db, smtp, etherpad)<br>
     Voir fichier docker-compose.yml du repertoire *api*;<br>
-    ** Commande **: docker-compose up --build
+    ** Commande **: docker-compose -f api/docker-compose.yaml up --build
 </p>
 
 Configurations
