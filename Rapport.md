@@ -6,7 +6,7 @@ Builder l'image du backend
 -----
 <p>
     Le fichier Dockerfile.jvm du repertoire *src/main/docker/* permet de builder et packager le backend <br>
-    **Commande** : docker build -f src/main/docker/Dockerfile.jvm -t backend_img:1.0
+    ** Commande ** : docker build -f src/main/docker/Dockerfile.jvm -t backend_img:1.0 .
 </p>
 
 Builder l'image du front
@@ -16,7 +16,7 @@ Builder l'image du front
     Nous utilisons un dockerfile à cet effet dans le repertoire *front/Dockerfile*<br>
     Ainsi à partir d'une image de node, on compile les sources angular et déposons ces sources dans le répertoire dist du container <br>
     Par la suite l'on reprend une image de serveur web notamment *bunkerized-nginx* sur laquelle on copie nos sources compilées dans le repertoire /www de celui-ci<br>
-    **Commande** : docker build -f front/Dockerfile -t frontend_img:1.0 . 
+    ** Commande ** : docker build -f front/Dockerfile -t frontend_img:1.0 . 
 </p>
 
 Lancer la stack de container
@@ -24,7 +24,7 @@ Lancer la stack de container
 <p>
     Créer un docker-compose pour lancer les différentes images créées (backend, front, db, smtp, etherpad)<br>
     Voir fichier docker-compose.yml du repertoire *api*;<br>
-    **Commande**: docker-compose up --build
+    ** Commande **: docker-compose up --build
 </p>
 
 Configurations
