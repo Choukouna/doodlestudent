@@ -1,6 +1,6 @@
-#Compte rendu du projet *doodlestudent*
+# Compte rendu du projet *doodlestudent*
 
-##Etapes de déploiement de l'application
+## Etapes de déploiement de l'application
 
 Builder l'image du backend
 -----
@@ -41,7 +41,7 @@ Mettre à jour le fichier de configuration du backend *application.yml*
 Ainsi les requetes sur /api sont redirigées sur le backend ici par
     if($host = rlok.diverse-team.fr) {}
 
-##Etat du projet 
+## Etat du projet 
 <p>
     Avec les dockerfiles et docker-compose actuels, nous arrivons à lancer les services **back, front, db et ehterpad** en local <br>
     Cependant une fois sur le serveur nous eûmes certaines difficultés. En effet, les services ont été deployées à l'identique sur la vm (en http)
@@ -52,7 +52,7 @@ Ainsi les requetes sur /api sont redirigées sur le backend ici par
     Neanmoins cela fonctionne sur la machine locale :-)
 </p>
 
-##Conclusion
+## Conclusion
 <ul>
     <li>Ce projet nous aura permis de manipuler et comprendre l'utilité d'images docker et de docker-compose pour 
     la gestion d'une stack de container. </li>
