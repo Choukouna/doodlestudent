@@ -15,7 +15,7 @@ Builder l'image du front
     Le front étant une app angular, on doit compiler ses sources avec la cli angular (ng-build et tout)
     Nous utilisons un dockerfile à cet effet dans le repertoire *front/Dockerfile*<br>
     Ainsi à partir d'une image de node, on compile les sources angular et déposons ces sources dans le répertoire dist du container <br>
-    Par la suite l'on reprend une image de serveur web notamment *bunkerized-nginx* sur laquelle on copie nos sources compilées dans le repertoire /www de celui-ci<br>
+    Par la suite l'on reprend une image de serveur web notamment *bunkerized-nginx* sur laquelle on copie nos sources compilées dans le repertoire /www de celui-ci puis on construit l'image finale de notre front comme suit <br>
     ** Commande ** : docker build -f front/Dockerfile -t frontend_img:1.0 . 
 </p>
 
@@ -24,6 +24,8 @@ Lancer la stack de container
 <p>
     Créer un docker-compose pour lancer les différentes images créées (backend, front, db, smtp, etherpad)<br>
     Voir fichier docker-compose.yml du repertoire *api*;<br>
+    Dans ce fichier, nous effectuons les configurations de bases des containers notamment la redirection des ports vers les ports voulus de notre localhost et les montages de volumes necessaires.<br>
+    Une fois construit on lance la stack ainsi <br>
     ** Commande **: docker-compose -f api/docker-compose.yaml up --build
 </p>
 
