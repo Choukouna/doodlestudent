@@ -1,4 +1,4 @@
-#author : Kounadi OUATTARA
+#author : Leo RAUZIER && Kounadi OUATTARA
 #docker compose pour load balancing utilisant jwilder/nginx-proxy comme proxy
 #pour lancer plusieurs instance d'un container docker-compose up --scale nomContainer=nbreInstance
 version: "3"

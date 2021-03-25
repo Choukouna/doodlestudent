@@ -1,4 +1,4 @@
-#author : Kounadi OUATTARA
+#author : Leo RAUZIER && Kounadi OUATTARA
 #builder ce dockerfile : docker build -t img_web_app:1 .
 #launch container : docker run -p 8080:8080 img_web_app:1
 
