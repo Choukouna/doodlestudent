@@ -1,0 +1,15 @@
+#author : Kounadi OUATTARA
+#docker compose pour load balancing utilisant jwilder/nginx-proxy comme proxy
+#pour lancer plusieurs instance d'un container docker-compose up --scale nomContainer=nbreInstance
+version: "3"
+services:
+  nginx_proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 8080:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  nginx_cont:
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=m
